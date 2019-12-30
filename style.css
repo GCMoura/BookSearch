@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+}
+
+#app {
+    height: 100vh;
+    background: linear-gradient(to right, #abbaab, #ffffff);
+    display: grid;
+    grid-gap: 5PX;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.insert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+}
+
+.show {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+}
+
+.input-group {
+    width: 500px;
+}
+
+#button-insert {
+    width: 180px;
+    height: 50px;
+    font-size: 0.5em;
+}
+
+.result {
+    font-size: 0.7em;
+}
