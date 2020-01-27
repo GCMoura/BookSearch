@@ -6,9 +6,9 @@
     height: 100vh;
     background: linear-gradient(to right, #abbaab, #ffffff);
     display: grid;
-    grid-gap: 5PX;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    /* grid-template-rows: 1fr 1fr; */
+    grid-template-columns: 1fr 55%;
 }
 
 .insert {
@@ -17,7 +17,8 @@
     align-items: center;
     padding: 10px;
     font-family: 'Merriweather', serif;
-    font-size: 2.5em;
+    font-size: 2.0em;
+    margin-top: 25px;
 }
 
 .search {
@@ -26,7 +27,7 @@
     align-items: center;
     padding: 10px;
     font-family: 'Merriweather', serif;
-    font-size: 2.5em;
+    font-size: 1.0em;
 }
 
 .show {
@@ -39,6 +40,11 @@
     font-size: 2.5em;
 }
 
+.bookTable {
+    font-family: 'Merriweather', serif;
+    font-size: 0.5em;
+}
+
 .input-group {
     width: 500px;
 }
@@ -46,9 +52,18 @@
 #button-insert {
     width: 180px;
     height: 50px;
-    font-size: 0.5em;
+    font-size: 0.7em;
+    margin-bottom: 20px;
 }
 
-.result {
-    font-size: 0.4em;
+#book-list {
+    font-family: 'Merriweather', serif;
+    font-size: 0.6em;
+}
+
+.alertBtn {
+    font-family: 'Merriweather', serif;
+    font-size: 0.2em;
+    width: 180px;
+    height: 50px;
 }
