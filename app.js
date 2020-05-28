@@ -73,7 +73,15 @@ function insertBooks() {
 
     const books = getBooks()
 
-    if(books == ''){ //se for a primeira inserção
+    //validação das informações
+    if(title == '' || author == ''){
+        insertValidation(title, author)
+        clearFields()
+    } else if(books == ''){ //se for a primeira inserção
+
+        title = title.toLowerCase().replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
+        author = author.toLowerCase().replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
+
         const book = new Book(title, author);
 
         render(book);
@@ -87,6 +95,8 @@ function insertBooks() {
         clearFields();
     } else {
         //laço para verificar se já existe o livro cadastrado
+        title = title.toLowerCase().replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
+
         for (i = 0; i < books.length; i++){
             if(books[i].title.indexOf(title) != -1){ //significa que tem outro titulo igual
                 control = true
@@ -102,6 +112,9 @@ function insertBooks() {
             bookAlert.style.background = 'blue'
             bookAlert.innerHTML= "Livro cadastrado com sucesso"
 
+            title = title.toLowerCase().replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
+            author = author.toLowerCase().replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
+
             const book = new Book(title, author);
             render(book);
             saveToStorage(book);
@@ -112,8 +125,25 @@ function insertBooks() {
 
 //limpar o alerta quando digitar novo livro
 insertTitle.addEventListener('focus', cleanAlert, false)
+insertAuthor.addEventListener('focus', cleanAlert, false)
+searchTitle.addEventListener('focus', cleanAlert, false)
+searchAuthor.addEventListener('focus', cleanAlert, false)
 function cleanAlert(){
     bookAlert.style.display = 'none'
+}
+//faz a validação dos campos título e autor
+function insertValidation(title, author){
+    if(title == ''){
+        bookAlert.style.display = 'block'
+        bookAlert.style.background = 'green'
+        bookAlert.innerHTML = "Falta o título do livro"
+    }
+    if(author == ''){
+        bookAlert.style.display = 'block'
+        bookAlert.style.background = 'green'
+        bookAlert.innerHTML = "Falta o autor do livro"
+    }
+
 }
 
 function getBooks() {
