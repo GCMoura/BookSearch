@@ -21,6 +21,17 @@
     margin-top: 25px;
 }
 
+.alert{
+    display: none;
+    font-size: 18px;
+    color: #fff;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    width: 300px;
+}
+
 .search {
     display: flex;
     flex-direction: column;
